@@ -8,6 +8,8 @@ namespace utils {
 void createRandomFiles(int choice, const std::string& filename);
 
 void testInsertions(int treeChoice, int choice);
+
+void testFind(int treeChoice, int choice);
     
 }
 

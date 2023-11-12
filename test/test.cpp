@@ -15,25 +15,55 @@ int main() {
             utils::createRandomFiles(i, filepath);
         }
     }
-    std::cout << "\nAVL TREE\n" << std::endl;
+    for (int i = 3; i <= 6; ++i) {
+        std::string filepath = "seeker_" + std::to_string(i) + ".txt";
+        utils::createRandomFiles(i, filepath);
+    }
+
+    std::cout << "\n---------------------------------------" << std::endl;
+    std::cout << "INSERTION" << std::endl;
+    std::cout << "---------------------------------------\n" << std::endl;
+
+    std::cout << "\nAVL TREE insertion\n" << std::endl;
     utils::testInsertions(0, 3);
     utils::testInsertions(0, 4);
     utils::testInsertions(0, 5);
     utils::testInsertions(0, 6);
 
-    std::cout << "\n\nABB TREE\n" << std::endl;
+    std::cout << "\nABB TREE insertion\n" << std::endl;
 
     utils::testInsertions(1, 3);
     utils::testInsertions(1, 4);
     utils::testInsertions(1, 5);
     utils::testInsertions(1, 6);
 
-    std::cout << "\n\n2-3 TREE\n" << std::endl;
+    std::cout << "\n2-3 TREE insertion\n" << std::endl;
     utils::testInsertions(2, 3);
     utils::testInsertions(2, 4);
     utils::testInsertions(2, 5);
     utils::testInsertions(2, 6);
 
+    std::cout << "\n---------------------------------------" << std::endl;
+    std::cout << "FIND" << std::endl;
+    std::cout << "---------------------------------------\n" << std::endl;
+
+    std::cout << "\nAVL TREE find\n" << std::endl;
+    utils::testFind(0, 3);
+    utils::testFind(0, 4);
+    utils::testFind(0, 5);
+    utils::testFind(0, 6);
+
+    std::cout << "\nABB TREE find\n" << std::endl;
+    utils::testFind(1, 3);
+    utils::testFind(1, 4);
+    utils::testFind(1, 5);
+    utils::testFind(1, 6);
+
+    std::cout << "\n2-3 TREE find\n" << std::endl;
+    utils::testFind(2, 3);
+    utils::testFind(2, 4);
+    utils::testFind(2, 5);
+    utils::testFind(2, 6);
 
     return 0;
 }

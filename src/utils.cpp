@@ -133,9 +133,9 @@ void testFind(int treeChoice, int choice) {
         timers.push_back(testFind_rep(filepath, choice, treeChoice));
     }
 
-    std::cout << "      |  Tiempos    : " << timers[0] << ", " << timers[1] << ", " << timers[2] << ", " << timers[3] << ", " << timers[4] << std::endl;
-    std::cout << "N^" << choice << "   |  Media      : " << getMedia(timers) << std::endl;
-    std::cout << "      |  Desv. Est. : " << standardDeviation(timers) << std::endl << std::endl;
+    std::cout << "      |  Tiempos (ms) : " << timers[0] << ", " << timers[1] << ", " << timers[2] << ", " << timers[3] << ", " << timers[4] << std::endl;
+    std::cout << "10^" << choice << "  |  Media (ms)   : " << getMedia(timers) << std::endl;
+    std::cout << "      |  Desv. Est.   : " << standardDeviation(timers) << std::endl << std::endl;
 }
 
 double testInsertions_rep(std::string filepath, int choice, int treeChoice) {
@@ -192,9 +192,9 @@ void testInsertions(int treeChoice, int choice) {
         timers.push_back(testInsertions_rep(filepath, choice, treeChoice));
     }
 
-    std::cout << "      |  Tiempos    : " << timers[0] << ", " << timers[1] << ", " << timers[2] << ", " << timers[3] << ", " << timers[4] << std::endl;
-    std::cout << "N^" << choice << "   |  Media      : " << getMedia(timers) << std::endl;
-    std::cout << "      |  Desv. Est. : " << standardDeviation(timers) << std::endl << std::endl;
+    std::cout << "      |  Tiempos (ms) : " << timers[0] << ", " << timers[1] << ", " << timers[2] << ", " << timers[3] << ", " << timers[4] << std::endl;
+    std::cout << "10^" << choice << "  |  Media (ms)   : " << getMedia(timers) << std::endl;
+    std::cout << "      |  Desv. Est.   : " << standardDeviation(timers) << std::endl << std::endl;
 }
 
 }

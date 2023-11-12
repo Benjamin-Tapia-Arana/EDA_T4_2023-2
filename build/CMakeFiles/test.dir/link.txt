@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/test.dir/test/test.cpp.o CMakeFiles/test.dir/src/tt.cpp.o CMakeFiles/test.dir/src/ttNode.cpp.o CMakeFiles/test.dir/src/abb.cpp.o CMakeFiles/test.dir/src/abbNode.cpp.o CMakeFiles/test.dir/src/avl.cpp.o CMakeFiles/test.dir/src/avlNode.cpp.o CMakeFiles/test.dir/src/utils.cpp.o -o test 

@@ -5,8 +5,8 @@
  *      Author: jsaavedr
  */
 
-#ifndef ABBNODE_HPP_
-#define ABBNODE_HPP_
+#ifndef AVLNODE_HPP_
+#define AVLNODE_HPP_
 
 namespace trees {
 

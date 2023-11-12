@@ -1,12 +1,6 @@
 #include "utils.hpp"
-#include "ttTree/tt.hpp"
-#include "ttTree/ttNode.hpp"
 #include <string>
 #include <iostream>
-#include <fstream>
-#include <vector>
-#include <sstream>
-#include <chrono>
 
 int main() {
     for (int i = 3; i <= 6; ++i) {

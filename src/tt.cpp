@@ -1,9 +1,7 @@
 #include "ttTree/tt.hpp"
 #include "ttTree/ttNode.hpp"
 #include <functional>
-#include <iostream>
 #include <memory>
-#include <set>
 
 namespace trees {
 

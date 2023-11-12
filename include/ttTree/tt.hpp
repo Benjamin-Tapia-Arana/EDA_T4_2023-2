@@ -2,7 +2,6 @@
 #define DTWOTHREE_HPP_
 
 #include "ttTree/ttNode.hpp"
-#include <memory> 
 
 namespace trees {
 

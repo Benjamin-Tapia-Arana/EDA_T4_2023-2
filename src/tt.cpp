@@ -34,9 +34,9 @@ void TT::insert_rec(int val, TTNode* node) {
     }
     else {
         std::function<void(int, TTNode*)> insertFunctions[] = {
-            [&](int v, TTNode* n) { insert_rec(v, n->getLeft().get()); },
-            [&](int v, TTNode* n) { insert_rec(v, n->getMiddle().get()); },
-            [&](int v, TTNode* n) { insert_rec(v, n->getRight().get()); }
+            [&](int v, TTNode* n) {insert_rec(v, n->getLeft().get());},
+            [&](int v, TTNode* n) {insert_rec(v, n->getMiddle().get());},
+            [&](int v, TTNode* n) {insert_rec(v, n->getRight().get());}
         };
 
         int childIndex = node->child(val);
@@ -106,6 +106,24 @@ void TT::resetNode(TTNode* node) {
     node->setRight(nullptr);
 }
 
+TTNode* TT::find_rec(int val, TTNode* node) {
+    if (node == nullptr) return nullptr;
+    else if (node->getMin() == val) return node;
+    else if (node->getMax() == val) return node;
+    else {
+        std::function<TTNode*(int, TTNode*)> findFunctions[] = {
+            [&](int v, TTNode* n) {return find_rec(v, n->getLeft().get());},
+            [&](int v, TTNode* n) {return find_rec(v, n->getMiddle().get());},
+            [&](int v, TTNode* n) {return find_rec(v, n->getRight().get());}
+        };
+        int dscIndex = node->child(val);
+        return findFunctions[dscIndex](val, node);
+    }
+}
+
+TTNode* TT::find(int val) {
+    return find_rec(val, root);
+}
 
 TTNode* TT::getRoot() {return root;}
 

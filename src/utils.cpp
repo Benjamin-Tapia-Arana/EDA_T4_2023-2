@@ -90,7 +90,6 @@ double testInsertions_final(std::string filepath, int choice, int treeChoice, in
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration = end - start;
         defDuration = duration.count();
-        std::cout << "Ejecución AVL, N^" << choice << ", iter. " << iterations << ": " << defDuration << " milisegundos" << std::endl;
     }
     else if (treeChoice == 1) {
         trees::ABB tree;
@@ -99,7 +98,6 @@ double testInsertions_final(std::string filepath, int choice, int treeChoice, in
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration = end - start;
         defDuration = duration.count();
-        std::cout << "Ejecución ABB, N^" << choice << ", iter. " << iterations << ": " << defDuration << " milisegundos" << std::endl;
     }
     else if (treeChoice == 2) {
         trees::TT tree;
@@ -108,7 +106,6 @@ double testInsertions_final(std::string filepath, int choice, int treeChoice, in
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration = end - start;
         defDuration = duration.count();
-        std::cout << "Ejecución 2-3, N^" << choice << ", iter. " << iterations << ": " << defDuration << " milisegundos" << std::endl;
     }
 
     return defDuration;
@@ -117,14 +114,14 @@ double testInsertions_final(std::string filepath, int choice, int treeChoice, in
 void testInsertions(int treeChoice, int choice) {
     std::vector<double> timers;
 
-    for (int j = 1; j <= 4; ++j) {
+    for (int j = 1; j <= 5; ++j) {
         std::string filepath = "../insertions/insertions_" + std::to_string(choice) + std::to_string(j) + ".txt";
         timers.push_back(testInsertions_final(filepath, choice, treeChoice, j));
     }
 
-    if (treeChoice == 0) std::cout << "Desv. estándar AVL, N^" << choice << ": " << standardDeviation(timers) << std::endl << std::endl;
-    if (treeChoice == 1) {std::cout << "Desv. estándar ABB, N^" << choice << ": " << standardDeviation(timers) << std::endl << std::endl;}
-    else if (treeChoice == 2) std::cout << "Desv. estándar 2-3, N^" << choice << ": " << standardDeviation(timers) << std::endl << std::endl;
+    std::cout << "      |  Tiempos    : " << timers[0] << ", " << timers[1] << ", " << timers[2] << ", " << timers[3] << ", " << timers[4] << std::endl;
+    std::cout << "N^" << choice << "   |  Media      : " << getMedia(timers) << std::endl;
+    std::cout << "      |  Desv. Est. : " << standardDeviation(timers) << std::endl << std::endl;
 }
 
 }

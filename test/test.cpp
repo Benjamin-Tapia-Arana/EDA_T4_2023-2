@@ -1,4 +1,6 @@
 #include "utils.hpp"
+#include "ttTree/tt.hpp"
+#include "ttTree/ttNode.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -6,13 +8,9 @@
 #include <sstream>
 #include <chrono>
 
-
-
-
-
 int main() {
     for (int i = 3; i <= 6; ++i) {
-        for (int j = 1; j <= 4; ++j) {
+        for (int j = 1; j <= 5; ++j) {
             std::string filepath = "insertions_" + std::to_string(i) + std::to_string(j) + ".txt";
             utils::createRandomFiles(i, filepath);
         }

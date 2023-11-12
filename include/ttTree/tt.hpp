@@ -10,11 +10,13 @@ class TT {
 private:
     TTNode* root;
     void resetNode(TTNode* node);
-public:
-    TT();
     void reorder(TTNode* node);
     void insert_rec(int val, TTNode* node);
+    TTNode* find_rec(int val, TTNode* node);
+public:
+    TT();
     void insert(int val);
+    TTNode* find(int val);
     TTNode* getRoot(); 
     virtual ~TT();
 };
